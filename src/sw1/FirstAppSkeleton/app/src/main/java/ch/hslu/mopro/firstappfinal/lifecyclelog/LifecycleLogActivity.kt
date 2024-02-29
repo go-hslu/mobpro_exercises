@@ -14,8 +14,37 @@ class LifecycleLogActivity : AppCompatActivity() {
 		Log.i("hslu_mobApp", "Activity onCreate() aufgerufen")
 		if (savedInstanceState == null) {
 			//TODO show LifecycleLogFragment
+
+			supportFragmentManager.beginTransaction()
+				.add(R.id.fragment_host, LifecycleLogFragment.newInstance())
+				.commit();
 		}
 	}
 
 	// TODO: Add further implementions of onX-methods.
+
+	override fun onStart() {
+		super.onStart()
+		Log.i("hslu_mobApp", "Activity onStart() aufgerufen")
+	}
+
+	override fun onResume() {
+		super.onResume()
+		Log.i("hslu_mobApp", "Activity onResume() aufgerufen")
+	}
+
+	override fun onPause() {
+		super.onPause()
+		Log.i("hslu_mobApp", "Activity onPause() aufgerufen")
+	}
+
+	override fun onStop() {
+		super.onStop()
+		Log.i("hslu_mobApp", "Activity onStop() aufgerufen")
+	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		Log.i("hslu_mobApp", "Activity onDestroy() aufgerufen")
+	}
 }
