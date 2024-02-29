@@ -15,7 +15,10 @@ class QuestionActivity : AppCompatActivity(R.layout.activity_questions) {
 
         // Read parameter and show on view.
         val question = intent.getStringExtra("question")
-        question?.let { setQuestionText(it) }
+        if (question == null)
+            setQuestionText("Alternative Frage")
+        else
+            setQuestionText(question)
         findViewById<View>(R.id.question_button_done).setOnClickListener { buttonClicked() }
     }
 
