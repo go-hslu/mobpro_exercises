@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView_1Layouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Layouts (Linear and Constraint)" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="196dp"
+                    android:layout_height="wrap_content"
+                    android:text="RadioButton" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RadioButton" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView_2Rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Ratings" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView_3Spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Spinner" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/courses"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/textView_4Dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Dialog" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                tools:text="@tools:sample/lorem/random" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

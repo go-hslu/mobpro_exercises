@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="courses">
+        <item>SQL Server: Administration</item>
+        <item>JavaScript: Aufbau</item>
+        <item>Sicherheit im Web</item>
+        <item>Java: Einführung</item>
+    </string-array>
+</resources>
