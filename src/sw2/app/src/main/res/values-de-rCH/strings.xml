@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Semesterwoche 2</string>
+    <string name="main_1layout">1. Layout (Linear und Constraints)</string>
+    <string name="main_2ratings">2. Bewertung</string>
+    <string name="main_3spinner">3. Kurs Auswahl</string>
+    <string name="main_4dialog">4. Dialog</string>
+</resources>

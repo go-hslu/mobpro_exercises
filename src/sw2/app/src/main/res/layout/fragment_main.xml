@@ -18,51 +18,65 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/app_name" />
 
             <TextView
                 android:id="@+id/textView_1Layouts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1. Layouts (Linear and Constraint)" />
+                android:text="@string/main_1layout" />
 
             <RadioGroup
+                android:id="@+id/radioGroup_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/radioButton_linear"
                     android:layout_width="196dp"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:text="Linear Layout" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/radioButton_constraint"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:text="Constraint Layout" />
             </RadioGroup>
+
+            <FrameLayout
+                android:id="@+id/frameLayout_fragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/textView_2Rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2. Ratings" />
+                android:text="@string/main_2ratings" />
 
             <RatingBar
-                android:id="@+id/ratingBar"
+                android:id="@+id/ratingBar_main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"/>
+
+            <TextView
+                android:id="@+id/textView_ratingBarOut"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="" />
 
             <TextView
                 android:id="@+id/textView_3Spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3. Spinner" />
+                android:text="@string/main_3spinner" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/spinner_main"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:entries="@array/courses"
@@ -72,10 +86,10 @@
                 android:id="@+id/textView_4Dialog"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4. Dialog" />
+                android:text="@string/main_4dialog" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/button_showAlert"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Button" />
@@ -84,7 +98,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                 tools:text="@tools:sample/lorem/random" />
         </LinearLayout>
     </ScrollView>
