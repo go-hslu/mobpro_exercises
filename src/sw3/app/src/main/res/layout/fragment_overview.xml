@@ -30,6 +30,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Default setzten" />
+
+        <TextView
+            android:id="@+id/textView_preference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ich trinke am liebsten Lipton, ungesüsst." />
+
+        <Button
+            android:id="@+id/button_showSMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SMS Anzeigen" />
     </LinearLayout>
 
 </FrameLayout>
