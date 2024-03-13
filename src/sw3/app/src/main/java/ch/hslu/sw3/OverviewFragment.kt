@@ -1,12 +1,15 @@
 package ch.hslu.sw3
 
 import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import ch.hslu.sw3.databinding.FragmentOverviewBinding
+
 
 class OverviewFragment : Fragment(R.layout.fragment_overview) {
     private var _binding: FragmentOverviewBinding? = null
@@ -20,6 +23,15 @@ class OverviewFragment : Fragment(R.layout.fragment_overview) {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentOverviewBinding.inflate(inflater, container, false)
+
+        binding.buttonEditPreferences.setOnClickListener { _ ->
+            startTeaPreferenceActivity()
+        }
+
+        binding.buttonSetDefault.setOnClickListener { _ ->
+            startTeaPreferenceActivity()
+        }
+
         return binding.root
     }
 
@@ -40,5 +52,13 @@ class OverviewFragment : Fragment(R.layout.fragment_overview) {
             .apply()
 
         binding.textViewCounter.text = "MainActivity onResume wurde $counter mal aufgerufen."
+    }
+
+    private fun startTeaPreferenceActivity() {
+
+        parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.frameLayout_fragmentContainer, TeaPreferenceFragment())
+            .commit()
     }
 }
