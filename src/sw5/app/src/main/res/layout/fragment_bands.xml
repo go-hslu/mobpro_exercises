@@ -1,22 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textViewCurrentBandImage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".bands.BandsFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <androidx.constraintlayout.helper.widget.Flow
+            <Button
+                android:id="@+id/button_loadBands"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bands laden" />
+
+            <TextView
+                android:id="@+id/textView_bandsCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="#Bands = 0" />
+
+            <Button
+                android:id="@+id/button_resetBands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Reset" />
+
+            <Button
+                android:id="@+id/button_showBands"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bands anzeigen" />
+
+            <TextView
+                android:id="@+id/textView_currentBandName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="keine Band ausgewählt" />
+
+            <TextView
+                android:id="@+id/textView_currentBandInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+
+            <ImageView
+                android:id="@+id/imageView_currentBandImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/cover_der_band" />
+
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

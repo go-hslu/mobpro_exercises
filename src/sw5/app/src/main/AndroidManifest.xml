@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sw5"
         tools:targetApi="31">
+
         <service
             android:name=".bands.BandsService"
             android:enabled="true"

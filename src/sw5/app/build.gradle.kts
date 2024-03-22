@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    // id("org.jetbrains.kotlin.multiplatform") version "1.9.22"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22"
 }
 
@@ -16,6 +17,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
@@ -53,7 +58,9 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.10.0")
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.10.0")
+    //implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serializationconverter:1.0.0")
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("com.squareup.picasso:picasso:2.8")
