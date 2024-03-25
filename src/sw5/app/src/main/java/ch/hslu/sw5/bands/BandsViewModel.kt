@@ -17,17 +17,24 @@ import java.net.HttpURLConnection
 
 class BandsViewModel : ViewModel() {
 
-    private val _bands: MutableStateFlow<List<BandCode>> = MutableStateFlow(emptyList())
-    val bands: Flow<List<BandCode>> = _bands
+    companion object {
+        private val jsonContentType = "application/json; charset=UTF8".toMediaType()
+    }
 
-    private val _currentBand: MutableStateFlow<BandInfo?> = MutableStateFlow(null)
-    val currentBand: Flow<BandInfo?> = _currentBand
+    private val _bandCodesFlow: MutableStateFlow<List<BandCode>> = MutableStateFlow(emptyList())
+    val bandCodesFlow: Flow<List<BandCode>> = _bandCodesFlow
+
+    val bandCodes: List<BandCode> get() = _bandCodesFlow.value
+
+    private val _currentBandFlow: MutableStateFlow<BandInfo?> = MutableStateFlow(null)
+    val currentBandFlow: Flow<BandInfo?> = _currentBandFlow
+
+    val currentBand: BandInfo? get() = _currentBandFlow.value
 
     private val retrofit = Retrofit.Builder()
         .client(OkHttpClient().newBuilder().build())
         .addConverterFactory(
-            Json.asConverterFactory(
-                "application/json; charset=UTF8".toMediaType()))
+            Json.asConverterFactory(jsonContentType))
         .baseUrl("https://wherever.ch/hslu/rock-bands/")
         .build()
 
@@ -38,7 +45,7 @@ class BandsViewModel : ViewModel() {
 
         viewModelScope.launch {
             val bands = getBandCodes()
-            bands?.let { _bands.emit(bands) }
+            bands?.let { _bandCodesFlow.emit(bands) }
         }
     }
 
@@ -46,8 +53,8 @@ class BandsViewModel : ViewModel() {
         Log.w("DEBUG", "Resetting bands")
 
         viewModelScope.launch {
-            _currentBand.emit(null)
-            _bands.tryEmit(emptyList())
+            _currentBandFlow.emit(null)
+            _bandCodesFlow.tryEmit(emptyList())
         }
     }
 
@@ -58,7 +65,7 @@ class BandsViewModel : ViewModel() {
             val band = getBandInfo(code)
 
             Log.w("DEBUG", "Selected band ${band?.name} from ${band?.homeCountry}")
-            band?.let { _currentBand.emit(band) }
+            band?.let { _currentBandFlow.emit(band) }
         }
     }
 

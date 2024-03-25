@@ -41,7 +41,7 @@ class BandsFragment : Fragment() {
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.bands.collect { bandCodes ->
+                viewModel.bandCodesFlow.collect { bandCodes ->
                     binding.textViewBandsCount.text = "#Bands = ${if (bandCodes.isEmpty()) 0 else bandCodes.size}"
 
                     binding.textViewCurrentBandName.text = ""
@@ -57,7 +57,7 @@ class BandsFragment : Fragment() {
 
         lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.currentBand.collect { bandInfo ->
+                viewModel.currentBandFlow.collect { bandInfo ->
 
                     if (bandInfo != null) {
                         binding.textViewCurrentBandName.text = bandInfo.name
@@ -82,7 +82,7 @@ class BandsFragment : Fragment() {
 
         binding.buttonShowBands.setOnClickListener { _ ->
             lifecycleScope.launch {
-                showBandsDialog(viewModel.bands.first())
+                showBandsDialog(viewModel.bandCodes)
             }
         }
 
